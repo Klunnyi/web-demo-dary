@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Cities</title>
+</head>
+<body>
+
+<h1>Cities</h1>
+
+<div style="width: 60%; margin-left: auto; margin-right: auto;">
+    <label for="cities">Cities:</label>
+    <br/>
+    <select size="5" id="cities">
+        <option th:each="city : ${cities}" th:value="${city.id}" th:text="${city.name}"></option>
+    </select>
+    <br/>
+    <br/>
+
+    <form action="cities/add_city" method="post">
+        <label for="city">Add City:</label>
+        <br/>
+        <input  type="text" name="city" id="city"/>
+        <button type="submit">Submit</button>
+    </form>
+</div>
+
+</body>
+</html>

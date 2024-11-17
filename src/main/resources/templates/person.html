@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Persons</title>
+</head>
+<body>
+
+<h1>Persons</h1>
+
+<div style="width: 60%; margin-left: auto; margin-right: auto;">
+  <label for="persons">Persons:</label>
+  <br/>
+  <select size="5" id="persons" name="persons">
+    <option th:each="person : ${persons}" th:value="${person.id}" th:text="${person.firstName}"></option>
+  </select>
+  <br/>
+  <br/>
+
+  <form action="persons/add_person" method="post">
+    <label for="person">Add Person:</label>
+    <br/>
+    <input  type="text" name="person" id="person"/>
+    <button type="submit">Submit</button>
+  </form>
+</div>
+
+
+</body>
+</html>
